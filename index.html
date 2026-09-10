@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curso Prótesis Flexible Inyectada — Método Transflex</title>
+<meta name="description" content="Aprendé a fabricar prótesis dentales flexibles inyectadas con el sistema Transflex, paso a paso, desde el diseño hasta el pulido a espejo.">
+
+<!-- ==================================================================
+     ⚠️  EDITAR ANTES DE PUBLICAR  (buscá cada texto entre << >> )
+     ------------------------------------------------------------------
+     1) LINK DE HOTMART:  reemplazá  << URL_CHECKOUT_HOTMART >>  (aparece
+        en TODOS los botones "Quiero inscribirme") por el link de pago
+        de tu producto en Hotmart.
+     2) PRECIO:  buscá  data-precio  y los textos  US$97 / US$1.279 /
+        US$1.182  y ajustá a tu oferta real.
+     3) NOMBRE / BIO del instructor: sección "Quién te va a enseñar".
+     4) TESTIMONIOS: sección "Lo que dicen los alumnos" — por política de
+        Meta y de Hotmart DEBEN ser reales y con permiso. Reemplazá los
+        de ejemplo o borrá la sección hasta tener reales.
+     5) WhatsApp: número ya cargado (+54 9 11 5706-7626). Si cambia,
+        buscá  5491157067626 .
+     6) Email de contacto y datos legales del pie de página.
+     7) MERCADO PAGO (para vender sin Hotmart mientras testeás):
+        creá un "link de pago" en tu cuenta de Mercado Pago Argentina
+        y reemplazá  << LINK_MERCADO_PAGO >>  por ese link.
+     ================================================================== -->
+
+<style>
+  :root{
+    --tinta:#10202b;
+    --tinta-2:#33505f;
+    --marca:#0e5a70;
+    --marca-2:#0d9488;
+    --marca-osc:#0a3d4c;
+    --acento:#f5a623;
+    --acento-osc:#d9880a;
+    --ok:#15803d;
+    --bg:#f6f4ef;
+    --bg-2:#ffffff;
+    --linea:#e3ddd2;
+    --sombra:0 10px 34px -12px rgba(10,40,50,.28);
+    --radio:16px;
+    --ancho:1120px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--tinta);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  h1,h2,h3{line-height:1.18;letter-spacing:-.01em;font-weight:800}
+  h2{font-size:clamp(1.6rem,4.4vw,2.5rem);margin-bottom:.6em}
+  h3{font-size:1.18rem}
+  p{margin-bottom:1rem}
+  a{color:inherit}
+  .wrap{max-width:var(--ancho);margin:0 auto;padding:0 20px}
+  section{padding:clamp(48px,8vw,88px) 0}
+  .centro{text-align:center}
+  .kicker{display:inline-block;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:var(--marca-2);background:rgba(13,148,136,.1);padding:7px 14px;border-radius:999px;margin-bottom:16px}
+  .lead{font-size:1.12rem;color:var(--tinta-2);max-width:60ch}
+  .centro .lead{margin-left:auto;margin-right:auto}
+
+  /* ---------- Botones ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(180deg,var(--acento),var(--acento-osc));
+    color:#3a2400;font-weight:800;font-size:1.05rem;
+    padding:18px 30px;border-radius:999px;border:0;cursor:pointer;
+    text-decoration:none;text-align:center;
+    box-shadow:0 12px 26px -8px rgba(217,136,10,.6);
+    transition:transform .12s ease, box-shadow .12s ease;
+    line-height:1.15;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -10px rgba(217,136,10,.7)}
+  .btn.grande{font-size:1.2rem;padding:22px 40px;width:100%;max-width:520px}
+  .btn small{display:block;font-weight:600;font-size:.78rem;opacity:.8}
+  .btn-wa{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:#25D366;color:#08331b;font-weight:800;text-decoration:none;
+    padding:16px 26px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(37,211,102,.7)
+  }
+  .btn-ghost{background:transparent;border:2px solid var(--linea);color:var(--tinta);box-shadow:none;font-weight:700}
+
+  .garantia-linea{font-size:.9rem;color:var(--tinta-2);margin-top:12px}
+
+  /* ---------- Barra anuncio + header ---------- */
+  .anuncio{background:var(--marca-osc);color:#eafcff;text-align:center;font-size:.86rem;padding:9px 16px;font-weight:600}
+  .anuncio b{color:var(--acento)}
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(246,244,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;gap:14px}
+  .logo{font-weight:800;font-size:1rem;letter-spacing:-.02em}
+  .logo span{color:var(--marca-2)}
+  .nav .btn{padding:12px 20px;font-size:.92rem}
+  @media(max-width:640px){ .nav .btn small{display:none} .nav .btn{padding:11px 16px} }
+
+  /* ---------- Hero ---------- */
+  .hero{background:radial-gradient(120% 90% at 80% 0%,#0e5a70 0%,#0a3d4c 55%,#082e39 100%);color:#eef7f8}
+  .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .hero h1{font-size:clamp(2rem,5.2vw,3.15rem);color:#fff}
+  .hero h1 mark{background:linear-gradient(180deg,transparent 55%,rgba(245,166,35,.55) 55%);color:#fff;padding:0 .1em}
+  .hero p.sub{font-size:1.15rem;color:#c9e6ea;max-width:52ch;margin-top:14px}
+  .hero ul{list-style:none;margin:22px 0 26px}
+  .hero li{padding-left:32px;position:relative;margin-bottom:10px;color:#e7f4f5}
+  .hero li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;background:var(--marca-2);color:#04231f;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:900}
+  .hero-foto{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -18px rgba(0,0,0,.55);border:6px solid rgba(255,255,255,.08)}
+  .hero-foto img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .hero-tag{position:absolute;left:14px;bottom:14px;background:rgba(8,46,57,.86);backdrop-filter:blur(4px);color:#eafcff;font-size:.8rem;font-weight:700;padding:8px 13px;border-radius:10px}
+  .hero-mini{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:#bcdfe3;margin-top:20px}
+  .hero-mini b{color:#fff;display:block;font-size:1.05rem}
+  @media(max-width:900px){ .hero .grid{grid-template-columns:1fr;gap:30px} .hero-foto{order:-1} }
+
+  /* ---------- Bloques genéricos ---------- */
+  .tarjetas{display:grid;gap:20px}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){ .cols-3,.cols-4{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:600px){ .cols-2,.cols-3,.cols-4{grid-template-columns:1fr} }
+  .card{background:var(--bg-2);border:1px solid var(--linea);border-radius:var(--radio);padding:24px;box-shadow:var(--sombra)}
+  .card .ico{width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.12);color:var(--marca-2);display:grid;place-items:center;font-size:1.3rem;font-weight:900;margin-bottom:14px}
+  .card h3{margin-bottom:6px}
+  .card p{font-size:.95rem;color:var(--tinta-2);margin:0}
+
+  .paraquien{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:700px){ .paraquien{grid-template-columns:1fr} }
+  .pq{border-radius:var(--radio);padding:26px;border:1px solid var(--linea)}
+  .pq.si{background:#effaf4;border-color:#bfe6cf}
+  .pq.no{background:#fbf1ee;border-color:#eccdc2}
+  .pq h3{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .pq ul{list-style:none;display:grid;gap:10px}
+  .pq li{padding-left:28px;position:relative;font-size:.97rem}
+  .pq.si li::before{content:"✔";position:absolute;left:0;color:var(--ok);font-weight:900}
+  .pq.no li::before{content:"✕";position:absolute;left:0;color:#b4472e;font-weight:900}
+
+  /* ---------- Dolor ---------- */
+  .dolor{background:#10202b;color:#e7eef1}
+  .dolor h2{color:#fff}
+  .dolor .lead{color:#a9c2c9}
+  .dolor-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  @media(max-width:700px){ .dolor-list{grid-template-columns:1fr} }
+  .dolor-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:18px 20px;font-size:.97rem}
+  .dolor-item b{color:var(--acento)}
+
+  /* ---------- Antes / Después ---------- */
+  .ba-wrap{max-width:760px;margin:0 auto}
+  .ba{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sombra);aspect-ratio:4/3;user-select:none;touch-action:none;background:#000}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ba .despues{clip-path:inset(0 0 0 50%)}
+  .ba .etq{position:absolute;top:12px;background:rgba(8,46,57,.85);color:#fff;font-size:.75rem;font-weight:700;padding:6px 11px;border-radius:8px;letter-spacing:.03em}
+  .ba .etq.izq{left:12px}
+  .ba .etq.der{right:12px}
+  .ba .mango{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  .ba .mango::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:#fff;color:var(--marca-osc);border-radius:50%;display:grid;place-items:center;font-size:1.1rem;font-weight:900;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+
+  /* ---------- Galería ---------- */
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+  @media(max-width:900px){ .galeria{grid-template-columns:repeat(3,1fr)} }
+  @media(max-width:560px){ .galeria{grid-template-columns:repeat(2,1fr)} }
+  .galeria figure{position:relative;border-radius:12px;overflow:hidden;cursor:zoom-in;border:1px solid var(--linea);background:#000}
+  .galeria img{aspect-ratio:1/1;object-fit:cover;transition:transform .35s ease}
+  .galeria figure:hover img{transform:scale(1.06)}
+  .galeria figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.74rem;font-weight:600;padding:16px 10px 8px}
+
+  .lightbox{position:fixed;inset:0;background:rgba(6,20,25,.92);display:none;align-items:center;justify-content:center;z-index:90;padding:20px;cursor:zoom-out}
+  .lightbox.on{display:flex}
+  .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lightbox button{position:absolute;top:18px;right:22px;background:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;font-weight:800}
+
+  /* ---------- Módulos (acordeón) ---------- */
+  .modulo{background:var(--bg-2);border:1px solid var(--linea);border-radius:14px;margin-bottom:12px;overflow:hidden;box-shadow:0 6px 18px -12px rgba(10,40,50,.25)}
+  .modulo>button{width:100%;display:flex;align-items:center;gap:16px;padding:18px 20px;background:none;border:0;cursor:pointer;text-align:left;font:inherit}
+  .modulo .num{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--marca);color:#fff;font-weight:800;display:grid;place-items:center}
+  .modulo .tit{flex:1;font-weight:800;font-size:1.02rem}
+  .modulo .estado{flex:0 0 auto;font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap}
+  .modulo .estado.ya{background:#effaf4;color:var(--ok);border:1px solid #bfe6cf}
+  .modulo .estado.pronto{background:#fff4e2;color:#a5670a;border:1px solid #eecfa0}
+  @media(max-width:560px){ .modulo .estado{display:none} }
+  .modulo .mas{flex:0 0 auto;font-size:1.4rem;color:var(--marca-2);transition:transform .2s}
+  .modulo.abierto .mas{transform:rotate(45deg)}
+  .modulo .cuerpo{display:none;padding:0 20px 20px 74px}
+  .modulo.abierto .cuerpo{display:block}
+  .modulo .cuerpo p{font-size:.95rem;color:var(--tinta-2)}
+  .modulo .cuerpo img{border-radius:10px;margin-top:8px;border:1px solid var(--linea);aspect-ratio:16/9;object-fit:cover}
+
+  /* ---------- Tabs casos ---------- */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
+  .tabs button{background:var(--bg-2);border:1px solid var(--linea);padding:11px 18px;border-radius:999px;font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;color:var(--tinta-2)}
+  .tabs button.on{background:var(--marca);color:#fff;border-color:var(--marca)}
+  .panel{display:none;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:var(--bg-2);border:1px solid var(--linea);border-radius:var(--radio);padding:26px;box-shadow:var(--sombra)}
+  .panel.on{display:grid}
+  @media(max-width:760px){ .panel.on{grid-template-columns:1fr} }
+  .panel img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--linea)}
+  .panel h3{margin-bottom:8px;font-size:1.25rem}
+  .panel p{font-size:.97rem;color:var(--tinta-2);margin:0}
+
+  /* ---------- Instructor ---------- */
+  .instructor{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:center;background:var(--bg-2);border:1px solid var(--linea);border-radius:var(--radio);padding:30px;box-shadow:var(--sombra)}
+  @media(max-width:760px){ .instructor{grid-template-columns:1fr} }
+  .instructor img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--linea)}
+  .instructor ul{margin:12px 0 0;padding-left:18px;color:var(--tinta-2);font-size:.96rem}
+
+  /* ---------- OFERTA / value stack ---------- */
+  .oferta{background:radial-gradient(120% 90% at 20% 0%,#0e5a70,#0a3d4c 60%,#082e39);color:#eaf6f7}
+  .oferta h2{color:#fff}
+  .oferta .lead{color:#bfe0e4}
+  .oferta-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-top:30px}
+  @media(max-width:920px){ .oferta-grid{grid-template-columns:1fr} }
+
+  .mockup{position:relative;background:linear-gradient(160deg,#123f4d,#0b2c37);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+  .mockup .device{border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.14);position:relative;background:#000}
+  .mockup .device img{aspect-ratio:16/10;object-fit:cover;opacity:.92}
+  .mockup .play{position:absolute;inset:0;display:grid;place-items:center}
+  .mockup .play span{width:64px;height:64px;border-radius:50%;background:rgba(245,166,35,.95);color:#3a2400;display:grid;place-items:center;font-size:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .mockup .kit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .mockup .kit figure{position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#000}
+  .mockup .kit img{aspect-ratio:1/1;object-fit:cover;opacity:.95}
+  .mockup .kit figcaption{position:absolute;left:0;right:0;bottom:0;font-size:.6rem;font-weight:700;text-align:center;background:rgba(8,40,50,.82);color:#eafcff;padding:4px 2px;letter-spacing:.02em}
+  .mockup .cinta{margin-top:14px;background:linear-gradient(180deg,var(--acento),var(--acento-osc));color:#3a2400;font-weight:800;text-align:center;border-radius:10px;padding:12px;font-size:1rem}
+  .mockup .cinta b{font-size:1.35rem;display:block}
+
+  .stack{background:var(--bg-2);color:var(--tinta);border-radius:18px;padding:26px;box-shadow:var(--sombra)}
+  .stack h3{font-size:1.15rem;margin-bottom:14px}
+  .stack .fila{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--linea);font-size:.95rem}
+  .stack .fila span:first-child{padding-right:8px}
+  .stack .fila .val{white-space:nowrap;font-weight:700;color:var(--tinta-2)}
+  .stack .fila em{font-style:normal;font-size:.8rem;color:var(--acento-osc);font-weight:700}
+  .stack .fila.bono span:first-child::before{content:"🎁 ";}
+  .stack .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;border-top:2px solid var(--tinta);font-weight:800}
+  .stack .total .val{font-size:1.5rem}
+  .stack .tachado{text-align:center;margin-top:14px;color:var(--tinta-2)}
+  .stack .tachado s{font-size:1.05rem}
+  .stack .precio{text-align:center;margin:4px 0 2px}
+  .stack .precio b{font-size:2.7rem;color:var(--marca-osc);letter-spacing:-.02em}
+  .stack .precio .cuotas{font-size:.9rem;color:var(--tinta-2);display:block}
+  .stack .ahorro{text-align:center;background:#effaf4;color:var(--ok);border:1px solid #bfe6cf;border-radius:999px;padding:7px 14px;font-weight:800;font-size:.9rem;display:inline-block;margin:10px auto 4px}
+  .stack .centro-btn{text-align:center;margin-top:16px}
+  .stack .pagos{text-align:center;font-size:.78rem;color:var(--tinta-2);margin-top:12px}
+  .stack .wa-alt{text-align:center;margin-top:14px;font-size:.9rem}
+  .stack .wa-alt a{color:var(--marca-2);font-weight:800;text-decoration:none;border-bottom:2px solid rgba(13,148,136,.35)}
+
+  .escalera{margin:22px 0 4px}
+  .escalera h3{color:#fff;font-size:1rem;text-align:center;margin-bottom:10px}
+  .escalera .paso{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+  .escalera .paso.activo{background:rgba(245,166,35,.16);border-color:rgba(245,166,35,.55)}
+  .escalera .et{flex:1}
+  .escalera .et b{display:block;font-size:.95rem;color:#fff}
+  .escalera .et span{font-size:.8rem;color:#bfe0e4}
+  .escalera .pr{font-weight:800;font-size:1.15rem;color:var(--acento);white-space:nowrap}
+  .escalera .paso.activo .pr{color:#fff}
+
+  /* ---------- Garantía ---------- */
+  .garantia{background:var(--bg-2);border:1px solid var(--linea);border-radius:var(--radio);padding:30px;display:grid;grid-template-columns:90px 1fr;gap:22px;align-items:center;box-shadow:var(--sombra);max-width:820px;margin:0 auto}
+  @media(max-width:600px){ .garantia{grid-template-columns:1fr;text-align:center} }
+  .garantia .sello{width:90px;height:90px;border-radius:50%;background:conic-gradient(from 0deg,var(--marca-2),var(--marca),var(--marca-2));color:#fff;display:grid;place-items:center;font-weight:900;font-size:.78rem;text-align:center;line-height:1.1;margin:0 auto}
+
+  /* ---------- Testimonios ---------- */
+  .testi{background:var(--bg-2);border:1px solid var(--linea);border-radius:var(--radio);padding:24px;box-shadow:var(--sombra)}
+  .testi .estrellas{color:var(--acento);letter-spacing:2px;margin-bottom:8px}
+  .testi p{font-size:.97rem;font-style:italic;color:var(--tinta-2)}
+  .testi .autor{font-style:normal;font-weight:800;font-size:.9rem;color:var(--tinta)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:820px;margin:0 auto}
+  .faq details{background:var(--bg-2);border:1px solid var(--linea);border-radius:12px;margin-bottom:10px;padding:0 20px}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.4rem;color:var(--marca-2);flex:0 0 auto}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{font-size:.95rem;color:var(--tinta-2);padding-bottom:18px;margin:0}
+
+  /* ---------- CTA final ---------- */
+  .cierre{background:#10202b;color:#e7eef1;text-align:center}
+  .cierre h2{color:#fff}
+  .cierre .lead{color:#a9c2c9;margin-left:auto;margin-right:auto}
+
+  /* ---------- Footer ---------- */
+  footer{background:#081f27;color:#9fc0c7;font-size:.82rem;padding:44px 0 40px}
+  footer .wrap{display:grid;gap:18px}
+  footer h4{color:#eafcff;font-size:.9rem;margin-bottom:6px}
+  footer a{color:#bfe0e4}
+  footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;line-height:1.7}
+  footer .disc{font-size:.76rem;color:#7fa5ad}
+
+  /* ---------- WhatsApp flotante ---------- */
+  .wa-float{position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:10px;background:#25D366;color:#08331b;font-weight:800;text-decoration:none;padding:13px 18px;border-radius:999px;box-shadow:0 14px 30px -8px rgba(37,211,102,.7)}
+  .wa-float svg{width:22px;height:22px;fill:currentColor}
+  .wa-float span{font-size:.9rem}
+  @media(max-width:520px){ .wa-float span{display:none} .wa-float{padding:14px;bottom:82px} }
+
+  /* ---------- Barra compra fija (mobile) ---------- */
+  .barra-compra{position:fixed;left:0;right:0;bottom:0;z-index:65;background:rgba(246,244,239,.97);backdrop-filter:blur(8px);border-top:1px solid var(--linea);padding:10px 14px;display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -8px 24px -12px rgba(0,0,0,.25)}
+  .barra-compra.on{display:flex}
+  .barra-compra .p b{font-size:1.15rem;color:var(--marca-osc)}
+  .barra-compra .p s{font-size:.78rem;color:var(--tinta-2);display:block;line-height:1}
+  .barra-compra .btn{padding:14px 20px;font-size:.95rem;width:auto}
+  @media(min-width:781px){ .barra-compra{display:none!important} }
+
+  .nota-edit{background:#fff8e6;border:1px dashed #e6c65c;color:#7a5b00;font-size:.8rem;padding:10px 14px;border-radius:10px;max-width:var(--ancho);margin:14px auto 0}
+</style>
+</head>
+<body>
+
+<!-- BARRA DE ANUNCIO -->
+<div class="anuncio">
+  🚀 <b>Precio FUNDADOR: US$35</b> — el curso está creciendo. El precio <b>sube con cada módulo nuevo</b> (regular US$90).
+</div>
+
+<!-- HEADER -->
+<header class="nav">
+  <div class="wrap">
+    <div class="logo">Método <span>Transflex</span></div>
+    <a class="btn" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Quiero inscribirme <small>Acceso inmediato</small></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="kicker">Curso online · Laboratorio dental</span>
+      <h1>Fabricá <mark>prótesis flexibles inyectadas</mark> con terminación profesional, paso a paso</h1>
+      <p class="sub">El sistema <b>Transflex</b> explicado de principio a fin: diseño, encerado, inclusión en mufla, inyección, desmuflado y pulido a espejo. Sin vueltas y con casos reales.</p>
+      <ul>
+        <li>Método completo: del modelo de yeso a la prótesis terminada</li>
+        <li>Parámetros exactos de temperatura, presión y tiempos de inyección</li>
+        <li>Casos resueltos: completas, semirrígidas, combinadas con barra y máscara estética</li>
+        <li><b>Precio fundador:</b> pagás una vez y recibís los módulos nuevos sin costo</li>
+      </ul>
+      <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Entrar como fundador — US$35 <small>Garantía de 7 días · pago 100% seguro</small></a>
+      <div class="hero-mini">
+        <div><b>4</b> módulos disponibles ya</div>
+        <div><b>+3</b> módulos y 6 bonos en camino</div>
+        <div><b>100%</b> online · a tu ritmo</div>
+      </div>
+    </div>
+    <div class="hero-foto">
+      <img src="img/denture-complete-front.jpg" alt="Prótesis completa flexible terminada con encía caracterizada">
+      <div class="hero-tag">Trabajo real de alumnos del método</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section>
+  <div class="wrap centro">
+    <span class="kicker">Antes de seguir</span>
+    <h2>¿Este curso es para vos?</h2>
+  </div>
+  <div class="wrap">
+    <div class="paraquien" style="margin-top:22px">
+      <div class="pq si">
+        <h3>✅ Sí, si sos…</h3>
+        <ul>
+          <li>Protésico/a dental o técnico/a que quiere sumar la técnica de flexible inyectada</li>
+          <li>Odontólogo/a con laboratorio propio que busca dejar de tercerizar</li>
+          <li>Estudiante avanzado/a que quiere diferenciarse con una técnica muy pedida</li>
+          <li>Ya hacés acrílico y querés dar el salto a un material sin metal, cómodo y estético</li>
+        </ul>
+      </div>
+      <div class="pq no">
+        <h3>❌ No, si…</h3>
+        <ul>
+          <li>Buscás un curso para "hacerte dientes a vos mismo" en casa</li>
+          <li>No tenés ni pensás tener acceso a un laboratorio con equipamiento básico</li>
+          <li>Querés resultados sin practicar: la técnica se domina repitiendo casos</li>
+          <li>Esperás una habilitación oficial para ejercer (esto es formación técnica, ver aviso legal)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOLOR / AGITACIÓN -->
+<section class="dolor">
+  <div class="wrap">
+    <span class="kicker" style="background:rgba(245,166,35,.16);color:var(--acento)">El problema real</span>
+    <h2>Perdés tiempo y dinero cada vez que un trabajo "vuelve"</h2>
+    <p class="lead">La prótesis flexible se paga muy bien… pero solo si sale bien la primera vez. Cuando la técnica no está clara, pasa esto:</p>
+    <div class="dolor-list">
+      <div class="dolor-item"><b>Burbujas y falta de relleno</b> en la inyección que arruinan horas de trabajo.</div>
+      <div class="dolor-item"><b>Desajustes y retenedores que aprietan</b> o no retienen, y el paciente vuelve.</div>
+      <div class="dolor-item"><b>Encía sin caracterizar</b> que "canta" que es una prótesis a 3 metros.</div>
+      <div class="dolor-item"><b>Terminación opaca</b>: no lográs el brillo a espejo del flexible bien pulido.</div>
+      <div class="dolor-item"><b>Tercerizás</b> y perdés el margen más grande del trabajo… y el control de los tiempos.</div>
+      <div class="dolor-item"><b>Prueba y error</b> quemando cartuchos caros hasta que "más o menos" sale.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIÓN -->
+<section>
+  <div class="wrap centro">
+    <span class="kicker">La solución</span>
+    <h2>El método Transflex, ordenado y sin secretos</h2>
+    <p class="lead">Cada etapa con su porqué, sus parámetros y sus puntos críticos. Lo que se aprende en años de laboratorio, sistematizado para que lo apliques desde el primer caso.</p>
+  </div>
+  <div class="wrap">
+    <div class="tarjetas cols-4" style="margin-top:26px">
+      <div class="card"><div class="ico">1</div><h3>Diseño previsible</h3><p>Alivios, ejes de inserción y diseño de conectores para que la prótesis entre, retenga y no lastime.</p></div>
+      <div class="card"><div class="ico">2</div><h3>Inyección controlada</h3><p>Temperatura, presión y tiempos según el cartucho. Se termina la lotería de "a ver si esta vez sale".</p></div>
+      <div class="card"><div class="ico">3</div><h3>Estética real</h3><p>Caracterización de encía, elección de dientes y máscara/relleno para casos exigentes.</p></div>
+      <div class="card"><div class="ico">4</div><h3>Terminación a espejo</h3><p>Secuencia de fresado y pulido para el brillo que distingue un trabajo profesional.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO REAL: ANTES/DESPUÉS + GALERÍA -->
+<section style="background:var(--bg-2)">
+  <div class="wrap centro">
+    <span class="kicker">Se ve el trabajo</span>
+    <h2>Del encerado a la prótesis terminada</h2>
+    <p class="lead">Deslizá para ver la transformación. Todo lo que ves son fotos reales de casos del laboratorio.</p>
+  </div>
+  <div class="wrap">
+    <div class="ba-wrap">
+      <div class="ba" id="ba">
+        <img class="antes" src="img/waxup-design.jpg" alt="Encerado y diseño del caso sobre modelo">
+        <img class="despues" src="img/denture-complete-front.jpg" alt="Prótesis flexible terminada">
+        <span class="etq izq">Diseño / encerado</span>
+        <span class="etq der">Prótesis terminada</span>
+        <div class="mango" id="ba-mango"></div>
+        <input type="range" min="0" max="100" value="50" id="ba-range" aria-label="Comparar antes y después">
+      </div>
+    </div>
+
+    <div class="galeria">
+      <figure data-full="img/press-transflex.jpg"><img src="img/press-transflex.jpg" alt="Prensa de inyección Transflex"><figcaption>Prensa de inyección Transflex</figcaption></figure>
+      <figure data-full="img/cartridges-3sizes.jpg"><img src="img/cartridges-3sizes.jpg" alt="Cartuchos de material flexible en 3 medidas"><figcaption>Cartuchos: 3 medidas</figcaption></figure>
+      <figure data-full="img/flasks.jpg"><img src="img/flasks.jpg" alt="Muflas de inyección"><figcaption>Muflas de inyección</figcaption></figure>
+      <figure data-full="img/flask-injection.jpg"><img src="img/flask-injection.jpg" alt="Prótesis incluida en mufla con canal de inyección"><figcaption>Inclusión + canal de inyección</figcaption></figure>
+      <figure data-full="img/work-inclusion.jpg"><img src="img/work-inclusion.jpg" alt="Preparación de canales de inyección"><figcaption>Preparando canales</figcaption></figure>
+      <figure data-full="img/sprue-cast.jpg"><img src="img/sprue-cast.jpg" alt="Modelo con bebedero listo para inyectar"><figcaption>Bebedero y colado</figcaption></figure>
+      <figure data-full="img/work-deflask.jpg"><img src="img/work-deflask.jpg" alt="Apertura de mufla / desmuflado"><figcaption>Desmuflado</figcaption></figure>
+      <figure data-full="img/denture-complete-side.jpg"><img src="img/denture-complete-side.jpg" alt="Prótesis completa flexible terminada, vista lateral"><figcaption>Completa terminada</figcaption></figure>
+    </div>
+    <p class="centro" style="font-size:.8rem;color:var(--tinta-2);margin-top:14px">Tocá cualquier imagen para ampliarla.</p>
+  </div>
+</section>
+
+<!-- CONTENIDO / MÓDULOS -->
+<section>
+  <div class="wrap centro">
+    <span class="kicker">Programa completo</span>
+    <h2>Qué vas a aprender, módulo por módulo</h2>
+    <p class="lead">7 módulos en video, ordenados en el mismo orden en que se hace un caso real. Los <b>4 primeros ya están disponibles</b>; los demás se suman a tu acceso sin costo a medida que se publican.</p>
+  </div>
+  <div class="wrap" style="max-width:860px;margin-top:24px">
+
+    <div class="modulo">
+      <button><span class="num">1</span><span class="tit">Fundamentos del sistema flexible inyectado</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Qué es el material flexible, tipos de cartucho, indicaciones y contraindicaciones, ventajas y límites frente al acrílico y al metal. Equipamiento mínimo para arrancar y cómo calcular el costo real por trabajo.</p>
+        <img src="img/cartridge-bag.jpg" alt="Cartucho de material flexible">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">2</span><span class="tit">Modelos, alivios y diseño del caso</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Análisis del modelo, eje de inserción, zonas de alivio, diseño de retenedores y conectores en flexible. Cómo planificar para que la prótesis entre, retenga y no lastime.</p>
+        <img src="img/flexible-framework.jpg" alt="Diseño de estructura flexible sobre modelos">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">3</span><span class="tit">Encerado y montaje para inyección</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Montaje de dientes, encerado funcional y estético, y preparación del patrón pensando en cómo va a fluir el material dentro de la mufla.</p>
+        <img src="img/waxup-design.jpg" alt="Encerado sobre modelo de yeso">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">4</span><span class="tit">Inclusión en mufla y canales de inyección</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Enmuflado, ubicación y diámetro de los bebederos, aislamiento y cierre. El 80% de las fallas de inyección se evitan acá: dónde van los canales y por qué.</p>
+        <img src="img/work-inclusion.jpg" alt="Preparación de canales de inyección en la mufla">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">5</span><span class="tit">Inyección con el sistema Transflex</span><span class="estado pronto">En grabación</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Puesta a punto de la prensa, temperatura del horno, tiempo de plastificado, presión y tiempo de mantenimiento según el cartucho. Tabla de parámetros y errores típicos con su corrección.</p>
+        <img src="img/press-transflex.jpg" alt="Prensa de inyección Transflex en uso">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">6</span><span class="tit">Desmuflado, terminado y pulido a espejo</span><span class="estado pronto">En grabación</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Apertura de la mufla sin fracturar, recorte de bebederos, secuencia de fresas, lijas y pastas para lograr el brillo característico del flexible bien terminado.</p>
+        <img src="img/work-deflask.jpg" alt="Desmuflado de la prótesis">
+      </div>
+    </div>
+
+    <div class="modulo">
+      <button><span class="num">7</span><span class="tit">Casos resueltos de principio a fin</span><span class="estado pronto">En grabación</span><span class="mas">+</span></button>
+      <div class="cuerpo">
+        <p>Completas, parciales semirrígidas, combinadas con barra metálica y máscara/relleno estético. Cada caso comentado con sus decisiones y sus puntos críticos.</p>
+        <img src="img/case-combined-bar.jpg" alt="Prótesis combinada con barra metálica">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASOS / TABS -->
+<section style="background:var(--bg-2)">
+  <div class="wrap centro">
+    <span class="kicker">Vas a poder resolver</span>
+    <h2>Los 4 tipos de caso más pedidos</h2>
+  </div>
+  <div class="wrap">
+    <div class="tabs">
+      <button class="on" data-tab="c1">Completas</button>
+      <button data-tab="c2">Semirrígidas</button>
+      <button data-tab="c3">Combinadas con barra</button>
+      <button data-tab="c4">Máscara / estética</button>
+    </div>
+
+    <div class="panel on" id="c1">
+      <img src="img/denture-complete-side.jpg" alt="Prótesis completa flexible">
+      <div>
+        <h3>Prótesis completas flexibles</h3>
+        <p>Estabilidad, sellado periférico y una encía caracterizada que se ve natural. Ideal para pacientes que no toleran el acrílico rígido o buscan más comodidad.</p>
+      </div>
+    </div>
+    <div class="panel" id="c2">
+      <img src="img/case-semirigid2.jpg" alt="Parcial flexible semirrígida translúcida">
+      <div>
+        <h3>Parciales semirrígidas</h3>
+        <p>Retenedores estéticos del mismo material, sin ganchos metálicos a la vista. Livianas, cómodas y con muy buena estética en el sector anterior.</p>
+      </div>
+    </div>
+    <div class="panel" id="c3">
+      <img src="img/case-combined-bar.jpg" alt="Prótesis flexible combinada con barra metálica">
+      <div>
+        <h3>Combinadas con barra metálica</h3>
+        <p>Lo mejor de los dos mundos: rigidez y precisión del metal en la estructura, más la estética y el confort del flexible en las sillas y los retenedores.</p>
+      </div>
+    </div>
+    <div class="panel" id="c4">
+      <img src="img/case-semirigid.jpg" alt="Máscara estética / relleno en prótesis flexible">
+      <div>
+        <h3>Máscara y relleno estético</h3>
+        <p>Recuperar volumen labial y armonía gingival en casos con reabsorción. Técnica de caracterización para que el trabajo no se note.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section>
+  <div class="wrap centro">
+    <span class="kicker">Quién te va a enseñar</span>
+    <h2>Años de laboratorio, resumidos para vos</h2>
+  </div>
+  <div class="wrap" style="max-width:900px">
+    <div class="instructor">
+      <img src="img/stel.jpg" alt="Stel Mayorga, instructora del curso">
+      <div>
+        <h3>Stel Mayorga</h3>
+        <p>Hace <b>15 años</b> que me dedico a fabricar prótesis flexibles inyectadas con el sistema Transflex. Aprendí en la práctica, al lado del banco, y llevo cientos de casos resueltos en el laboratorio. En este curso te enseño <b>exactamente la técnica que uso todos los días</b>: sin vueltas y con los detalles que solo se aprenden haciendo.</p>
+        <ul>
+          <li>15 años de oficio y cientos de casos de flexible resueltos</li>
+          <li>Enfoque 100% práctico: lo que funciona en el día a día, no teoría</li>
+          <li>Las dudas más frecuentes las respondo en videos y módulos nuevos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA + VALUE STACK -->
+<section class="oferta" id="oferta">
+  <div class="wrap centro">
+    <span class="kicker" style="background:rgba(245,166,35,.16);color:var(--acento)">La oferta fundador</span>
+    <h2>Todo lo que te llevás como fundador</h2>
+    <p class="lead">Entrás ahora al precio más bajo que va a tener el curso. Cada módulo nuevo se suma a tu acceso <b>sin pagar de nuevo</b>, y el precio para los que entren después sube.</p>
+  </div>
+
+  <div class="wrap oferta-grid">
+
+    <!-- MOCKUP -->
+    <div class="mockup">
+      <div class="device">
+        <img src="img/denture-complete-front.jpg" alt="Curso Método Transflex en pantalla">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <div class="kit">
+        <figure><img src="img/press-transflex.jpg" alt="7 módulos en video"><figcaption>7 MÓDULOS</figcaption></figure>
+        <figure><img src="img/cartridges-3sizes.jpg" alt="Tabla de parámetros"><figcaption>TABLA PARÁMETROS</figcaption></figure>
+        <figure><img src="img/case-combined-bar.jpg" alt="Casos resueltos"><figcaption>CASOS REALES</figcaption></figure>
+        <figure><img src="img/flask-injection.jpg" alt="Guía de fallas"><figcaption>GUÍA DE FALLAS</figcaption></figure>
+        <figure><img src="img/sprue-cast.jpg" alt="Plantillas de presupuesto"><figcaption>PLANTILLAS $$</figcaption></figure>
+        <figure><img src="img/work-deflask.jpg" alt="Módulo de ventas y certificado"><figcaption>VENTAS + CERTIF.</figcaption></figure>
+      </div>
+      <div class="cinta">Precio fundador <b>US$35</b> pago único · acceso de por vida · módulos nuevos incluidos</div>
+    </div>
+
+    <!-- STACK -->
+    <div class="stack">
+      <h3>Lo que incluye (y cuánto vale por separado)</h3>
+      <div class="fila"><span>Módulo 1 — Fundamentos del sistema flexible</span><span class="val" data-val="12">US$12</span></div>
+      <div class="fila"><span>Módulo 2 — Modelos, alivios y diseño</span><span class="val" data-val="16">US$16</span></div>
+      <div class="fila"><span>Módulo 3 — Encerado y montaje para inyección</span><span class="val" data-val="14">US$14</span></div>
+      <div class="fila"><span>Módulo 4 — Inclusión en mufla y canales</span><span class="val" data-val="18">US$18</span></div>
+      <div class="fila"><span>Módulo 5 — Inyección con sistema Transflex <em>(al publicarse)</em></span><span class="val" data-val="20">US$20</span></div>
+      <div class="fila"><span>Módulo 6 — Desmuflado, terminado y pulido <em>(al publicarse)</em></span><span class="val" data-val="14">US$14</span></div>
+      <div class="fila"><span>Módulo 7 — Casos resueltos de principio a fin <em>(al publicarse)</em></span><span class="val" data-val="18">US$18</span></div>
+      <div class="fila bono"><span>Bono 1 — Guía "20 fallas de inyección y cómo resolverlas"</span><span class="val" data-val="8">US$8</span></div>
+      <div class="fila bono"><span>Bono 2 — Tabla de parámetros por tipo de cartucho</span><span class="val" data-val="6">US$6</span></div>
+      <div class="fila bono"><span>Bono 3 — Directorio de proveedores (LATAM)</span><span class="val" data-val="6">US$6</span></div>
+      <div class="fila bono"><span>Bono 4 — Plantillas de presupuesto + guía para cotizar</span><span class="val" data-val="7">US$7</span></div>
+      <div class="fila bono"><span>Bono 5 — Módulo extra: cómo conseguir clientes y responder objeciones <em>(en preparación)</em></span><span class="val" data-val="12">US$12</span></div>
+      <div class="fila bono"><span>Bono 6 — Certificado de finalización</span><span class="val" data-val="5">US$5</span></div>
+
+      <div class="total"><span>Valor del curso completo</span><span class="val" id="total-val">US$156</span></div>
+
+      <div class="tachado">Precio regular cuando esté completo: <s>US$90</s></div>
+      <div class="precio">
+        <b>US$35</b>
+        <span class="cuotas">precio fundador · pago único · en cuotas o medios locales según tu país</span>
+      </div>
+      <div class="centro"><span class="ahorro">Entrás US$55 más barato que el precio regular</span></div>
+
+      <div class="escalera">
+        <h3>Cómo sube el precio</h3>
+        <div class="paso activo">
+          <div class="et"><b>Fundador — ahora</b><span>Módulos 1 a 4 + los 6 bonos, y todo lo que se agregue</span></div>
+          <div class="pr">US$35</div>
+        </div>
+        <div class="paso">
+          <div class="et"><b>Lanzamiento</b><span>Con Módulos 5–7 publicados y primeros testimonios</span></div>
+          <div class="pr">US$55</div>
+        </div>
+        <div class="paso">
+          <div class="et"><b>Precio regular</b><span>Curso completo + módulo de ventas y objeciones</span></div>
+          <div class="pr">US$90</div>
+        </div>
+      </div>
+
+      <div class="centro-btn">
+        <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Quiero mi lugar de fundador — US$35 <small>Acceso inmediato · Garantía 7 días</small></a>
+      </div>
+      <div class="pagos">Pago procesado por <b>Hotmart</b> · Tarjeta de crédito/débito, PayPal y medios locales según el país. Entorno seguro.</div>
+      <div class="wa-alt">
+        <b>¿Estás en Argentina?</b> Pagá con <b>Mercado Pago</b> o transferencia:<br>
+        <a href="<< LINK_MERCADO_PAGO >>" target="_blank" rel="noopener">Pagar con Mercado Pago →</a><br>
+        ¿Dudas o querés coordinar la transferencia?
+        <a href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20(M%C3%A9todo%20Transflex).%20Quiero%20hacer%20una%20consulta%20/%20comprar%20por%20transferencia." target="_blank" rel="noopener">Escribinos por WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTÍA -->
+<section>
+  <div class="wrap">
+    <div class="garantia">
+      <div class="sello">7 DÍAS<br>GARANTÍA</div>
+      <div>
+        <h3>Probalo sin riesgo</h3>
+        <p style="margin:0;color:var(--tinta-2)">Entrá, mirá los primeros módulos y aplicá lo que quieras. Si en <b>7 días</b> sentís que no es para vos, pedís el reembolso completo desde la misma plataforma de Hotmart, sin explicaciones y sin trámites raros. El riesgo lo ponemos nosotros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section style="background:var(--bg-2)">
+  <div class="wrap centro">
+    <span class="kicker">Lo que dicen los alumnos</span>
+    <h2>Resultados de quienes ya lo hicieron</h2>
+    <p class="nota-edit">⚠️ Reemplazá estos ejemplos por testimonios REALES (con nombre y permiso). Publicar testimonios inventados viola las políticas de Meta y de Hotmart.</p>
+  </div>
+  <div class="wrap">
+    <div class="tarjetas cols-3" style="margin-top:22px">
+      <div class="testi">
+        <div class="estrellas">★★★★★</div>
+        <p>"Venía tercerizando todos los flexibles. Con el curso hice mi primer caso completo yo solo y quedó impecable. Se me terminó la dependencia del otro laboratorio."</p>
+        <div class="autor">— &lt;&lt; Nombre &gt;&gt;, &lt;&lt; Ciudad &gt;&gt;</div>
+      </div>
+      <div class="testi">
+        <div class="estrellas">★★★★★</div>
+        <p>"Lo que más me sirvió fue la parte de canales de inyección. Dejé de tener burbujas en el sector anterior. Solo eso ya me pagó el curso."</p>
+        <div class="autor">— &lt;&lt; Nombre &gt;&gt;, &lt;&lt; Ciudad &gt;&gt;</div>
+      </div>
+      <div class="testi">
+        <div class="estrellas">★★★★★</div>
+        <p>"Explicado muy claro y al grano. La tabla de parámetros la tengo pegada en la pared del laboratorio."</p>
+        <div class="autor">— &lt;&lt; Nombre &gt;&gt;, &lt;&lt; Ciudad &gt;&gt;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap centro">
+    <span class="kicker">Preguntas frecuentes</span>
+    <h2>Lo que solés querer saber antes de entrar</h2>
+  </div>
+  <div class="wrap faq" style="margin-top:22px">
+    <details><summary>¿Necesito experiencia previa?</summary><p>Es ideal si ya tenés nociones de laboratorio dental (manejo de yeso, encerado, muflas). No es un curso "desde cero absoluto" para público general: está pensado para técnicos, protésicos, odontólogos y estudiantes avanzados.</p></details>
+    <details><summary>¿Qué equipamiento hace falta?</summary><p>Prensa/sistema de inyección, mufla de inyección, horno o recipiente de plastificado, cartuchos de material flexible y herramientas básicas de terminado. En el Módulo 1 y en el directorio de proveedores te mostramos opciones y dónde conseguirlas en LATAM.</p></details>
+    <details><summary>¿Cómo accedo al curso?</summary><p>Apenas se confirma el pago recibís por email el acceso a todo el material: los videos y los PDF, ordenados por módulo. Lo ves cuando quieras, desde la computadora o el celular, sin límite de tiempo.</p></details>
+    <details><summary>¿Por cuánto tiempo lo puedo ver?</summary><p>Acceso de por vida, incluidas las actualizaciones y los módulos nuevos que se agreguen más adelante.</p></details>
+    <details><summary>¿Tiene clases en vivo o grupo de WhatsApp?</summary><p>No. Es un curso 100% grabado para que lo hagas a tu ritmo. Las preguntas que se repiten las respondo con videos y módulos nuevos que se suman a tu acceso sin costo. Para una consulta puntual sobre el material, escribís por email.</p></details>
+    <details><summary>¿Puedo pagar en mi moneda o en cuotas?</summary><p>Sí. El checkout de Hotmart muestra los medios de pago y las cuotas disponibles según tu país. Si preferís transferencia bancaria, escribinos por WhatsApp y lo coordinamos.</p></details>
+    <details><summary>¿Y si no me sirve?</summary><p>Tenés 7 días de garantía. Si no es para vos, pedís el reembolso completo desde Hotmart, sin vueltas.</p></details>
+    <details><summary>¿Este curso me habilita para trabajar como protésico?</summary><p>No. Es formación técnica sobre una técnica específica de laboratorio. La habilitación para ejercer depende de la normativa y los títulos oficiales de cada país. Consultá la regulación de tu lugar.</p></details>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="cierre">
+  <div class="wrap">
+    <h2>Sumá una técnica que se paga bien y que pocos dominan de verdad</h2>
+    <p class="lead">Precio fundador: US$35 · 4 módulos disponibles + 3 en camino + 6 bonos · acceso de por vida · módulos nuevos incluidos · garantía de 7 días.</p>
+    <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta style="margin:10px auto 0">Quiero mi lugar de fundador <small>Pago 100% seguro con Hotmart</small></a>
+    <p class="garantia-linea" style="color:#9fc0c7">¿Dudas? <a href="https://wa.me/5491157067626?text=Hola!%20Tengo%20una%20consulta%20sobre%20el%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada." target="_blank" rel="noopener" style="color:#25D366;font-weight:800">Escribinos por WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Curso Prótesis Flexible Inyectada — Método Transflex</h4>
+      <p style="margin:0">Contacto: WhatsApp <a href="https://wa.me/5491157067626" target="_blank" rel="noopener">+54 9 11 5706-7626</a> · Email: <a href="mailto:stemayorga@gmail.com">stemayorga@gmail.com</a> · González Catán, Provincia de Buenos Aires, Argentina</p>
+    </div>
+
+    <div id="privacidad" class="legal">
+      <h4>Política de privacidad</h4>
+      <p class="disc">Los datos que dejes (nombre, email, teléfono) se usan únicamente para procesar tu compra, darte acceso al curso y brindarte soporte. No vendemos ni cedemos tu información a terceros ajenos a la operación. El pago y la facturación los gestiona Hotmart según su propia política de privacidad. Podés pedir la baja o la eliminación de tus datos escribiendo al contacto de arriba.</p>
+    </div>
+
+    <div id="terminos" class="legal">
+      <h4>Términos y aviso legal</h4>
+      <p class="disc">Este es un curso de formación técnica para laboratorio dental. No otorga título ni habilitación profesional; la autorización para ejercer depende de la normativa de cada país. Los resultados dependen de la práctica, el equipamiento y la dedicación de cada alumno: no garantizamos ingresos ni resultados económicos específicos. Las imágenes corresponden a trabajos de laboratorio reales y son ilustrativas. Compra y reembolsos (7 días) se rigen por los términos de Hotmart.</p>
+    </div>
+
+    <div class="legal">
+      <p class="disc">Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Tampoco está avalado por Meta de ninguna forma. FACEBOOK e INSTAGRAM son marcas registradas de Meta Platforms, Inc. "Transflex" se menciona a título descriptivo de la técnica y pertenece a sus respectivos titulares.</p>
+      <p class="disc">© <span id="year"></span> — Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20(M%C3%A9todo%20Transflex)." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.73c0 4.46-3.63 8.09-8.1 8.09a8.1 8.1 0 0 1-4.12-1.13l-.3-.17-3.15.82.84-3.07-.2-.32a8.05 8.05 0 0 1-1.24-4.3c0-4.46 3.63-8.09 8.09-8.09Zm4.65 10.28c-.25-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.29.19-.54.06-.25-.13-1.07-.4-2.03-1.26-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.38-.78-1.89-.2-.49-.42-.42-.57-.43l-.49-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.3Z"/></svg>
+  <span>¿Dudas? Escribinos</span>
+</a>
+
+<!-- BARRA COMPRA FIJA -->
+<div class="barra-compra" id="barra">
+  <div class="p"><s>US$90</s><b>US$35</b></div>
+  <a class="btn" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Ser fundador</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox"><button aria-label="Cerrar">×</button><img src="" alt=""></div>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- ANTES / DESPUÉS ---------- */
+  var range = document.getElementById('ba-range');
+  var despues = document.querySelector('#ba .despues');
+  var mango = document.getElementById('ba-mango');
+  if(range){
+    var mover = function(v){
+      despues.style.clipPath = 'inset(0 0 0 '+v+'%)';
+      mango.style.left = v+'%';
+    };
+    range.addEventListener('input', function(){ mover(this.value); });
+    mover(50);
+  }
+
+  /* ---------- GALERÍA / LIGHTBOX ---------- */
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('.galeria figure').forEach(function(f){
+    f.addEventListener('click', function(){
+      lbImg.src = f.getAttribute('data-full');
+      lbImg.alt = f.querySelector('img').alt;
+      lb.classList.add('on');
+    });
+  });
+  function cerrar(){ lb.classList.remove('on'); lbImg.src=''; }
+  lb.addEventListener('click', cerrar);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrar(); });
+
+  /* ---------- ACORDEÓN MÓDULOS ---------- */
+  document.querySelectorAll('.modulo > button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var m = b.parentElement;
+      var abierto = m.classList.contains('abierto');
+      document.querySelectorAll('.modulo').forEach(function(x){ x.classList.remove('abierto'); });
+      if(!abierto) m.classList.add('abierto');
+    });
+  });
+  var m1 = document.querySelector('.modulo'); if(m1) m1.classList.add('abierto');
+
+  /* ---------- TABS CASOS ---------- */
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){ x.classList.remove('on'); });
+      document.querySelectorAll('.panel').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      var p = document.getElementById(b.getAttribute('data-tab'));
+      if(p) p.classList.add('on');
+    });
+  });
+
+  /* ---------- COUNT-UP VALOR TOTAL ---------- */
+  var totalEl = document.getElementById('total-val');
+  var animado = false;
+  function fmt(n){ return 'US$' + Math.round(n).toLocaleString('es-AR'); }
+  function animarTotal(){
+    if(animado) return; animado = true;
+    var objetivo = 0;
+    document.querySelectorAll('.stack .val[data-val]').forEach(function(v){ objetivo += parseInt(v.getAttribute('data-val'),10); });
+    var ini = null, dur = 1100;
+    function paso(ts){
+      if(!ini) ini = ts;
+      var p = Math.min((ts-ini)/dur, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      totalEl.textContent = fmt(objetivo * eased);
+      if(p < 1) requestAnimationFrame(paso);
+      else totalEl.textContent = fmt(objetivo);
+    }
+    requestAnimationFrame(paso);
+  }
+  if('IntersectionObserver' in window && totalEl){
+    var io = new IntersectionObserver(function(ent){
+      ent.forEach(function(e){ if(e.isIntersecting) animarTotal(); });
+    }, {threshold:.4});
+    io.observe(document.querySelector('.stack'));
+  } else { animarTotal(); }
+
+  /* ---------- BARRA COMPRA FIJA ---------- */
+  var barra = document.getElementById('barra');
+  var oferta = document.getElementById('oferta');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    var pasoHero = y > window.innerHeight * 0.9;
+    var enOferta = oferta.getBoundingClientRect().top < window.innerHeight && oferta.getBoundingClientRect().bottom > 0;
+    if(pasoHero && !enOferta) barra.classList.add('on');
+    else barra.classList.remove('on');
+  }, {passive:true});
+
+  /* ---------- AVISO SI FALTA EL LINK DE HOTMART ---------- */
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if(a.getAttribute('href').indexOf('URL_CHECKOUT_HOTMART') > -1){
+        e.preventDefault();
+        alert('Falta cargar el link de checkout de Hotmart.\n\nAbrí index.html y reemplazá  << URL_CHECKOUT_HOTMART >>  por el link de pago de tu producto en Hotmart.');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
