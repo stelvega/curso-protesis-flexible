@@ -6,6 +6,24 @@
 <title>Curso Prótesis Flexible Inyectada — Método Transflex</title>
 <meta name="description" content="Aprendé a fabricar prótesis dentales flexibles inyectadas con el sistema Transflex, paso a paso, desde el diseño hasta el pulido a espejo.">
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1432353984849922');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <!-- ==================================================================
      ⚠️  EDITAR ANTES DE PUBLICAR  (buscá cada texto entre << >> )
      ------------------------------------------------------------------
@@ -843,6 +861,14 @@
         alert('Falta cargar el link de checkout de Hotmart.\n\nAbrí index.html y reemplazá  << URL_CHECKOUT_HOTMART >>  por el link de pago de tu producto en Hotmart.');
       }
     });
+  });
+
+  /* ---------- META PIXEL: evento Lead en clics de intención de compra ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href*="mpago.la"], a[href*="wa.me"], [data-cta]');
+    if(a && typeof fbq === 'function'){
+      fbq('track', 'Lead');
+    }
   });
 })();
 </script>
