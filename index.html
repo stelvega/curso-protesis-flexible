@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Curso Prótesis Flexible Inyectada — Método Transflex</title>
-<meta name="description" content="Aprendé a fabricar prótesis dentales flexibles inyectadas con el sistema Transflex, paso a paso, desde el diseño hasta el pulido a espejo.">
+<title>Curso Prótesis Flexible Inyectada — Método de Inyección Flexible</title>
+<meta name="description" content="Aprendé a fabricar prótesis dentales flexibles inyectadas, paso a paso, desde el diseño hasta el pulido a espejo.">
 
 <!-- Meta Pixel Code -->
 <script>
@@ -25,23 +25,23 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <!-- ==================================================================
-     ⚠️  EDITAR ANTES DE PUBLICAR  (buscá cada texto entre << >> )
+     ⚠️  NOTAS DE EDICIÓN
      ------------------------------------------------------------------
-     1) LINK DE HOTMART:  reemplazá  << URL_CHECKOUT_HOTMART >>  (aparece
-        en TODOS los botones "Quiero inscribirme") por el link de pago
-        de tu producto en Hotmart.
-     2) PRECIO:  buscá  data-precio  y los textos  US$97 / US$1.279 /
-        US$1.182  y ajustá a tu oferta real.
+     1) CHECKOUT: el botón "Quiero inscribirme" / "Ser fundador" ya
+        apunta al producto real en Shopify:
+        https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas
+        La entrega del material es MANUAL: cuando alguien compra (por
+        Shopify o por Mercado Pago/transferencia), hay que mandarle el
+        mail de bienvenida con el acceso a los PDF a mano.
+     2) PRECIO: buscá los textos con $ (pesos argentinos) y los data-val
+        del value stack si volvés a ajustar la oferta.
      3) NOMBRE / BIO del instructor: sección "Quién te va a enseñar".
      4) TESTIMONIOS: sección "Lo que dicen los alumnos" — por política de
-        Meta y de Hotmart DEBEN ser reales y con permiso. Reemplazá los
-        de ejemplo o borrá la sección hasta tener reales.
+        Meta DEBEN ser reales y con permiso. Reemplazá los de ejemplo o
+        borrá la sección hasta tener reales.
      5) WhatsApp: número ya cargado (+54 9 11 5706-7626). Si cambia,
         buscá  5491157067626 .
      6) Email de contacto y datos legales del pie de página.
-     7) MERCADO PAGO (para vender sin Hotmart mientras testeás):
-        creá un "link de pago" en tu cuenta de Mercado Pago Argentina
-        y reemplazá  << LINK_MERCADO_PAGO >>  por ese link.
      ================================================================== -->
 
 <style>
@@ -102,14 +102,21 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
   .garantia-linea{font-size:.9rem;color:var(--tinta-2);margin-top:12px}
 
   /* ---------- Barra anuncio + header ---------- */
-  .anuncio{background:var(--marca-osc);color:#eafcff;text-align:center;font-size:.86rem;padding:9px 16px;font-weight:600}
+  .anuncio{background:var(--marca-osc);color:#eafcff;font-size:.86rem;padding:9px 0;font-weight:600;overflow:hidden;white-space:nowrap;position:relative}
   .anuncio b{color:var(--acento)}
+  .anuncio-track{display:inline-flex;width:max-content;animation:anuncio-marquee 26s linear infinite}
+  .anuncio-item{padding:0 40px}
+  .anuncio:hover .anuncio-track{animation-play-state:paused}
+  @keyframes anuncio-marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @media (prefers-reduced-motion: reduce){ .anuncio-track{animation:none} .anuncio{text-align:center;overflow:visible;white-space:normal} .anuncio-item:nth-child(n+4){display:none} }
   header.nav{position:sticky;top:0;z-index:40;background:rgba(246,244,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;gap:14px}
   .logo{font-weight:800;font-size:1rem;letter-spacing:-.02em}
   .logo span{color:var(--marca-2)}
   .nav .btn{padding:12px 20px;font-size:.92rem}
   @media(max-width:640px){ .nav .btn small{display:none} .nav .btn{padding:11px 16px} }
+  .nav-para-quien{font-size:.85rem;color:var(--tinta-2);font-weight:600;text-align:right;max-width:340px}
+  @media(max-width:700px){ .nav-para-quien{display:none} }
 
   /* ---------- Hero ---------- */
   .hero{background:radial-gradient(120% 90% at 80% 0%,#0e5a70 0%,#0a3d4c 55%,#082e39 100%);color:#eef7f8}
@@ -315,20 +322,45 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
   @media(min-width:781px){ .barra-compra{display:none!important} }
 
   .nota-edit{background:#fff8e6;border:1px dashed #e6c65c;color:#7a5b00;font-size:.8rem;padding:10px 14px;border-radius:10px;max-width:var(--ancho);margin:14px auto 0}
+
+  /* ---------- Contador de urgencia ---------- */
+  .contador{background:var(--marca-osc);color:#eafcff;text-align:center;font-size:.85rem;font-weight:700;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .contador b{color:var(--acento);font-variant-numeric:tabular-nums}
+
+  /* ---------- Pop-up de salida ---------- */
+  .popup-overlay{position:fixed;inset:0;background:rgba(6,20,25,.75);display:none;align-items:center;justify-content:center;z-index:95;padding:20px}
+  .popup-overlay.on{display:flex}
+  .popup-box{background:var(--bg-2);border-radius:18px;padding:34px 28px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative}
+  .popup-box h3{margin:8px 0 10px;font-size:1.35rem}
+  .popup-box p{font-size:.95rem;color:var(--tinta-2)}
+  .popup-box .btn{width:100%;margin-top:6px}
+  .popup-cerrar{position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--tinta-2);line-height:1;padding:6px}
 </style>
 </head>
 <body>
 
 <!-- BARRA DE ANUNCIO -->
 <div class="anuncio">
-  🚀 <b>Precio FUNDADOR: US$35</b> — el curso está creciendo. El precio <b>sube con cada módulo nuevo</b> (regular US$90).
+  <div class="anuncio-track">
+    <span class="anuncio-item">🚀 <b>Precio FUNDADOR: $24.999</b> — el precio <b>sube con cada módulo nuevo</b> (regular $60.000)</span>
+    <span class="anuncio-item">💥 <b>Más del 50% de descuento</b> por tiempo limitado</span>
+    <span class="anuncio-item">⏳ Garantía de 7 días · pago 100% seguro</span>
+    <span class="anuncio-item">🔥 4 módulos ya disponibles + 3 en camino</span>
+    <span class="anuncio-item" aria-hidden="true">🚀 <b>Precio FUNDADOR: $24.999</b> — el precio <b>sube con cada módulo nuevo</b> (regular $60.000)</span>
+    <span class="anuncio-item" aria-hidden="true">💥 <b>Más del 50% de descuento</b> por tiempo limitado</span>
+    <span class="anuncio-item" aria-hidden="true">⏳ Garantía de 7 días · pago 100% seguro</span>
+    <span class="anuncio-item" aria-hidden="true">🔥 4 módulos ya disponibles + 3 en camino</span>
+  </div>
 </div>
+
+<!-- CONTADOR DE URGENCIA -->
+<div class="contador">⏳ Tu precio fundador termina en <b id="contador-tiempo">24:00:00</b></div>
 
 <!-- HEADER -->
 <header class="nav">
   <div class="wrap">
-    <div class="logo">Método <span>Transflex</span></div>
-    <a class="btn" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Quiero inscribirme <small>Acceso inmediato</small></a>
+    <div class="logo">Método <span>Flexible</span></div>
+    <span class="nav-para-quien">Para protésicos, técnicos y odontólogos con laboratorio propio</span>
   </div>
 </header>
 
@@ -338,14 +370,14 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     <div>
       <span class="kicker">Curso online · Laboratorio dental</span>
       <h1>Fabricá <mark>prótesis flexibles inyectadas</mark> con terminación profesional, paso a paso</h1>
-      <p class="sub">El sistema <b>Transflex</b> explicado de principio a fin: diseño, encerado, inclusión en mufla, inyección, desmuflado y pulido a espejo. Sin vueltas y con casos reales.</p>
+      <p class="sub">El método de inyección flexible explicado de principio a fin: diseño, encerado, inclusión en mufla, inyección, desmuflado y pulido a espejo. Sin vueltas y con casos reales.</p>
       <ul>
         <li>Método completo: del modelo de yeso a la prótesis terminada</li>
         <li>Parámetros exactos de temperatura, presión y tiempos de inyección</li>
         <li>Casos resueltos: completas, semirrígidas, combinadas con barra y máscara estética</li>
-        <li><b>Precio fundador:</b> pagás una vez y recibís los módulos nuevos sin costo</li>
+        <li><b>Precio fundador</b> (el precio de los primeros en anotarse): pagás una vez y recibís los módulos nuevos sin costo</li>
       </ul>
-      <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Entrar como fundador — US$35 <small>Garantía de 7 días · pago 100% seguro</small></a>
+      <p class="sub" style="color:#fff;font-weight:700;margin-top:10px">Cada prótesis que “vuelve” es un cartucho caro tirado a la basura, horas de laburo perdidas y un cliente que empieza a dudar de vos.</p>
       <div class="hero-mini">
         <div><b>6</b> bonos disponibles desde el día 1</div>
         <div><b>7</b> módulos, publicación progresiva</div>
@@ -374,6 +406,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
           <li>Odontólogo/a con laboratorio propio que busca dejar de tercerizar</li>
           <li>Estudiante avanzado/a que quiere diferenciarse con una técnica muy pedida</li>
           <li>Ya hacés acrílico y querés dar el salto a un material sin metal, cómodo y estético</li>
+          <li>Querés generar ingresos fabricando prótesis flexibles y vendiéndolas</li>
         </ul>
       </div>
       <div class="pq no">
@@ -403,6 +436,9 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
       <div class="dolor-item"><b>Tercerizás</b> y perdés el margen más grande del trabajo… y el control de los tiempos.</div>
       <div class="dolor-item"><b>Prueba y error</b> quemando cartuchos caros hasta que "más o menos" sale.</div>
     </div>
+    <div class="centro" style="margin-top:32px">
+      <a class="btn grande" href="https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas" data-cta>Ser fundador — $24.999 <small>Garantía de 7 días · pago 100% seguro</small></a>
+    </div>
   </div>
 </section>
 
@@ -410,7 +446,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
 <section>
   <div class="wrap centro">
     <span class="kicker">La solución</span>
-    <h2>El método Transflex, ordenado y sin secretos</h2>
+    <h2>El método de inyección flexible, ordenado y sin secretos</h2>
     <p class="lead">Cada etapa con su porqué, sus parámetros y sus puntos críticos. Lo que se aprende en años de laboratorio, sistematizado para que lo apliques desde el primer caso.</p>
   </div>
   <div class="wrap">
@@ -443,7 +479,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="galeria">
-      <figure data-full="img/corflex.jpg"><img src="img/corflex.jpg" alt="Inyectora automática Corflex usada en el método Transflex"><figcaption>Inyectora automática (Corflex)</figcaption></figure>
+      <figure data-full="img/corflex.jpg"><img src="img/corflex.jpg" alt="Inyectora automática Corflex usada en el método de inyección flexible"><figcaption>Inyectora automática (Corflex)</figcaption></figure>
       <figure data-full="img/cartridges-3sizes.jpg"><img src="img/cartridges-3sizes.jpg" alt="Cartuchos de material flexible en 3 medidas"><figcaption>Cartuchos: 3 medidas</figcaption></figure>
       <figure data-full="img/flasks.jpg"><img src="img/flasks.jpg" alt="Muflas de inyección"><figcaption>Muflas de inyección</figcaption></figure>
       <figure data-full="img/flask-injection.jpg"><img src="img/flask-injection.jpg" alt="Prótesis incluida en mufla con canal de inyección"><figcaption>Inclusión + canal de inyección</figcaption></figure>
@@ -461,12 +497,13 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
   <div class="wrap centro">
     <span class="kicker">Programa completo</span>
     <h2>Qué vas a aprender, módulo por módulo</h2>
-    <p class="lead">7 módulos en video, ordenados en el mismo orden en que se hace un caso real. Se publican progresivamente: no hace falta esperar a tenerlos todos para empezar. El cronograma completo te llega en el mail de bienvenida.</p>
+    <p class="lead">7 módulos en PDF, ordenados en el mismo orden en que se hace un caso real. Se publican progresivamente: no hace falta esperar a tenerlos todos para empezar. Comprás el curso, accedés a los módulos ya disponibles, y los siguientes se van habilitando en tu acceso sin costo extra.</p>
+    <p class="lead" style="font-size:.9rem">⚠️ Los parámetros técnicos (temperatura, presión, tiempos) que aparecen en los módulos son <b>estimativos</b> y dependen mucho de qué inyectora tengas. Si mientras hacés un trabajo te queda alguna duda de cómo seguir, o no estás seguro/a de algún método antes de aplicarlo, <b>preguntanos antes de avanzar</b>: <a href="https://wa.me/5491157067626?text=Hola!%20Tengo%20una%20duda%20t%C3%A9cnica%20sobre%20un%20m%C3%B3dulo%20del%20curso." target="_blank" rel="noopener" style="color:var(--marca-2);font-weight:800">escribinos por WhatsApp</a> y te ayudamos a resolverlo antes de que sigas con el trabajo.</p>
   </div>
   <div class="wrap" style="max-width:860px;margin-top:24px">
 
     <div class="modulo">
-      <button><span class="num">1</span><span class="tit">Fundamentos del sistema flexible inyectado</span><span class="estado pronto">16 sep</span><span class="mas">+</span></button>
+      <button><span class="num">1</span><span class="tit">Fundamentos del sistema flexible inyectado</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Qué es el material flexible, tipos de cartucho, indicaciones y contraindicaciones, ventajas y límites frente al acrílico y al metal. Equipamiento mínimo para arrancar y cómo calcular el costo real por trabajo.</p>
         <img src="img/cartridge-bag.jpg" alt="Cartucho de material flexible">
@@ -474,7 +511,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">2</span><span class="tit">Modelos, alivios y diseño del caso</span><span class="estado pronto">20 sep</span><span class="mas">+</span></button>
+      <button><span class="num">2</span><span class="tit">Modelos, alivios y diseño del caso</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Análisis del modelo, eje de inserción, zonas de alivio, diseño de retenedores y conectores en flexible. Cómo planificar para que la prótesis entre, retenga y no lastime.</p>
         <img src="img/flexible-framework.jpg" alt="Diseño de estructura flexible sobre modelos">
@@ -482,7 +519,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">3</span><span class="tit">Encerado y montaje para inyección</span><span class="estado pronto">24 sep</span><span class="mas">+</span></button>
+      <button><span class="num">3</span><span class="tit">Encerado y montaje para inyección</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Montaje de dientes, encerado funcional y estético, y preparación del patrón pensando en cómo va a fluir el material dentro de la mufla.</p>
         <img src="img/waxup-design.jpg" alt="Encerado sobre modelo de yeso">
@@ -490,7 +527,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">4</span><span class="tit">Inclusión en mufla y canales de inyección</span><span class="estado pronto">28 sep</span><span class="mas">+</span></button>
+      <button><span class="num">4</span><span class="tit">Inclusión en mufla y canales de inyección</span><span class="estado ya">Disponible</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Enmuflado, ubicación y diámetro de los bebederos, aislamiento y cierre. El 80% de las fallas de inyección se evitan acá: dónde van los canales y por qué.</p>
         <img src="img/work-inclusion.jpg" alt="Preparación de canales de inyección en la mufla">
@@ -498,7 +535,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">5</span><span class="tit">Inyección con el sistema Transflex</span><span class="estado pronto">3 oct</span><span class="mas">+</span></button>
+      <button><span class="num">5</span><span class="tit">Inyección con la técnica flexible</span><span class="estado pronto">Próximamente</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Puesta a punto de la prensa, temperatura del horno, tiempo de plastificado, presión y tiempo de mantenimiento según el cartucho. Tabla de parámetros y errores típicos con su corrección.</p>
         <img src="img/corflex.jpg" alt="Inyectora automática Corflex en el laboratorio">
@@ -506,7 +543,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">6</span><span class="tit">Desmuflado, terminado y pulido a espejo</span><span class="estado pronto">7 oct</span><span class="mas">+</span></button>
+      <button><span class="num">6</span><span class="tit">Desmuflado, terminado y pulido a espejo</span><span class="estado pronto">Próximamente</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Apertura de la mufla sin fracturar, recorte de bebederos, secuencia de fresas, lijas y pastas para lograr el brillo característico del flexible bien terminado.</p>
         <img src="img/work-deflask.jpg" alt="Desmuflado de la prótesis">
@@ -514,7 +551,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     </div>
 
     <div class="modulo">
-      <button><span class="num">7</span><span class="tit">Casos resueltos de principio a fin</span><span class="estado pronto">11 oct</span><span class="mas">+</span></button>
+      <button><span class="num">7</span><span class="tit">Casos resueltos de principio a fin</span><span class="estado pronto">Próximamente</span><span class="mas">+</span></button>
       <div class="cuerpo">
         <p>Completas, parciales semirrígidas, combinadas con barra metálica y máscara/relleno estético. Cada caso comentado con sus decisiones y sus puntos críticos.</p>
         <img src="img/case-combined-bar.jpg" alt="Prótesis combinada con barra metálica">
@@ -580,11 +617,11 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
       <img src="img/stel.jpg" alt="Stel Mayorga, instructora del curso">
       <div>
         <h3>Stel Mayorga</h3>
-        <p>Hace <b>15 años</b> que me dedico a fabricar prótesis flexibles inyectadas con el sistema Transflex. Aprendí en la práctica, al lado del banco, y llevo cientos de casos resueltos en el laboratorio. En este curso te enseño <b>exactamente la técnica que uso todos los días</b>: sin vueltas y con los detalles que solo se aprenden haciendo.</p>
+        <p>Hace <b>15 años</b> que me dedico a fabricar prótesis flexibles inyectadas. Aprendí en la práctica, al lado del banco, y llevo cientos de casos resueltos en el laboratorio. En este curso te enseño <b>exactamente la técnica que uso todos los días</b>: sin vueltas y con los detalles que solo se aprenden haciendo.</p>
         <ul>
           <li>15 años de oficio y cientos de casos de flexible resueltos</li>
           <li>Enfoque 100% práctico: lo que funciona en el día a día, no teoría</li>
-          <li>Las dudas más frecuentes las respondo en videos y módulos nuevos</li>
+          <li>Las dudas más frecuentes las respondo en guías PDF y módulos nuevos</li>
         </ul>
       </div>
     </div>
@@ -596,7 +633,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
   <div class="wrap centro">
     <span class="kicker" style="background:rgba(245,166,35,.16);color:var(--acento)">La oferta fundador</span>
     <h2>Todo lo que te llevás como fundador</h2>
-    <p class="lead">Entrás ahora al precio más bajo que va a tener el curso. Cada módulo nuevo se suma a tu acceso <b>sin pagar de nuevo</b>, y el precio para los que entren después sube.</p>
+    <p class="lead"><b>"Fundador"</b> es simplemente el nombre que le damos a los primeros en anotarse: entrás ahora, al precio más bajo que va a tener el curso. Cada módulo nuevo se suma a tu acceso <b>sin pagar de nuevo</b>, y el precio para los que entren después va subiendo.</p>
   </div>
 
   <div class="wrap oferta-grid">
@@ -604,74 +641,75 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     <!-- MOCKUP -->
     <div class="mockup">
       <div class="device">
-        <img src="img/denture-complete-front.jpg" alt="Curso Método Transflex en pantalla">
-        <div class="play"><span>▶</span></div>
+        <img src="img/denture-complete-front.jpg" alt="Curso de prótesis flexible en pantalla">
+        <div class="play"><span>📄</span></div>
       </div>
       <div class="kit">
-        <figure><img src="img/corflex.jpg" alt="7 módulos en video"><figcaption>7 MÓDULOS</figcaption></figure>
+        <figure><img src="img/corflex.jpg" alt="7 módulos en PDF"><figcaption>7 MÓDULOS</figcaption></figure>
         <figure><img src="img/cartridges-3sizes.jpg" alt="Tabla de parámetros"><figcaption>TABLA PARÁMETROS</figcaption></figure>
         <figure><img src="img/case-combined-bar.jpg" alt="Casos resueltos"><figcaption>CASOS REALES</figcaption></figure>
         <figure><img src="img/flask-injection.jpg" alt="Guía de fallas"><figcaption>GUÍA DE FALLAS</figcaption></figure>
         <figure><img src="img/sprue-cast.jpg" alt="Plantillas de presupuesto"><figcaption>PLANTILLAS $$</figcaption></figure>
         <figure><img src="img/work-deflask.jpg" alt="Módulo de ventas y certificado"><figcaption>VENTAS + CERTIF.</figcaption></figure>
       </div>
-      <div class="cinta">Precio fundador <b>US$35</b> pago único · acceso de por vida · módulos nuevos incluidos</div>
+      <div class="cinta">Precio fundador <b>$24.999</b> pago único · acceso de por vida · módulos nuevos incluidos</div>
     </div>
 
     <!-- STACK -->
     <div class="stack">
       <h3>Lo que incluye (y cuánto vale por separado)</h3>
-      <p style="font-size:.82rem;color:var(--tinta-2);margin:-6px 0 12px">Los 7 módulos se publican de forma progresiva — el cronograma completo te llega en el mail de bienvenida.</p>
-      <div class="fila"><span>Módulo 1 — Fundamentos del sistema flexible</span><span class="val" data-val="12">US$12</span></div>
-      <div class="fila"><span>Módulo 2 — Modelos, alivios y diseño</span><span class="val" data-val="16">US$16</span></div>
-      <div class="fila"><span>Módulo 3 — Encerado y montaje para inyección</span><span class="val" data-val="14">US$14</span></div>
-      <div class="fila"><span>Módulo 4 — Inclusión en mufla y canales</span><span class="val" data-val="18">US$18</span></div>
-      <div class="fila"><span>Módulo 5 — Inyección con sistema Transflex</span><span class="val" data-val="20">US$20</span></div>
-      <div class="fila"><span>Módulo 6 — Desmuflado, terminado y pulido</span><span class="val" data-val="14">US$14</span></div>
-      <div class="fila"><span>Módulo 7 — Casos resueltos de principio a fin</span><span class="val" data-val="18">US$18</span></div>
-      <div class="fila bono"><span>Bono 1 — Guía "20 fallas de inyección y cómo resolverlas"</span><span class="val" data-val="8">US$8</span></div>
-      <div class="fila bono"><span>Bono 2 — Tabla de parámetros por tipo de cartucho</span><span class="val" data-val="6">US$6</span></div>
-      <div class="fila bono"><span>Bono 3 — Directorio de proveedores (LATAM)</span><span class="val" data-val="6">US$6</span></div>
-      <div class="fila bono"><span>Bono 4 — Plantillas de presupuesto + guía para cotizar</span><span class="val" data-val="7">US$7</span></div>
-      <div class="fila bono"><span>Bono 5 — Módulo extra: cómo conseguir clientes y responder objeciones <em>(en preparación)</em></span><span class="val" data-val="12">US$12</span></div>
-      <div class="fila bono"><span>Bono 6 — Certificado de finalización</span><span class="val" data-val="5">US$5</span></div>
+      <p style="font-size:.82rem;color:var(--tinta-2);margin:-6px 0 12px">Los 7 módulos se publican de forma progresiva — a medida que avanza el curso, se habilitan los módulos siguientes en tu acceso sin costo extra.</p>
+      <div class="fila"><span>Módulo 1 — Fundamentos del sistema flexible</span><span class="val" data-val="6500">$6.500</span></div>
+      <div class="fila"><span>Módulo 2 — Modelos, alivios y diseño</span><span class="val" data-val="8500">$8.500</span></div>
+      <div class="fila"><span>Módulo 3 — Encerado y montaje para inyección</span><span class="val" data-val="7500">$7.500</span></div>
+      <div class="fila"><span>Módulo 4 — Inclusión en mufla y canales</span><span class="val" data-val="9500">$9.500</span></div>
+      <div class="fila"><span>Módulo 5 — Inyección con la técnica flexible</span><span class="val" data-val="11000">$11.000</span></div>
+      <div class="fila"><span>Módulo 6 — Desmuflado, terminado y pulido</span><span class="val" data-val="7500">$7.500</span></div>
+      <div class="fila"><span>Módulo 7 — Casos resueltos de principio a fin</span><span class="val" data-val="9500">$9.500</span></div>
+      <div class="fila bono"><span>Bono 1 — Guía "20 fallas de inyección y cómo resolverlas"</span><span class="val" data-val="4500">$4.500</span></div>
+      <div class="fila bono"><span>Bono 2 — Tabla de parámetros por tipo de cartucho</span><span class="val" data-val="3500">$3.500</span></div>
+      <div class="fila bono"><span>Bono 3 — Directorio de proveedores (LATAM)</span><span class="val" data-val="3500">$3.500</span></div>
+      <div class="fila bono"><span>Bono 4 — Plantillas de presupuesto + guía para cotizar</span><span class="val" data-val="4000">$4.000</span></div>
+      <div class="fila bono"><span>Bono 5 — Módulo extra: cómo conseguir clientes y responder objeciones <em>(en preparación)</em></span><span class="val" data-val="6500">$6.500</span></div>
+      <div class="fila bono"><span>Bono 6 — Certificado de finalización</span><span class="val" data-val="3000">$3.000</span></div>
 
-      <div class="total"><span>Valor del curso completo</span><span class="val" id="total-val">US$156</span></div>
+      <div class="total"><span>Valor del curso completo</span><span class="val" id="total-val">$85.000</span></div>
 
-      <div class="tachado">Precio regular cuando esté completo: <s>US$90</s></div>
+      <div class="tachado">Precio regular cuando esté completo: <s>$60.000</s></div>
       <div class="precio">
-        <b>US$35</b>
+        <b>$24.999</b>
         <span class="cuotas">precio fundador · pago único · en cuotas o medios locales según tu país</span>
       </div>
-      <div class="centro"><span class="ahorro">Entrás US$55 más barato que el precio regular</span></div>
+      <div class="centro"><span class="ahorro">🔥 Más del 50% OFF — entrás $35.000 más barato que el precio regular</span></div>
 
       <div class="escalera">
         <h3>Cómo sube el precio</h3>
         <div class="paso activo">
-          <div class="et"><b>Fundador — ahora</b><span>Los 6 bonos desde hoy + los 7 módulos según cronograma (empiezan el 16/09)</span></div>
-          <div class="pr">US$35</div>
+          <div class="et"><b>Fundador — ahora</b><span>Los 6 bonos desde hoy + acceso a los módulos disponibles, y los nuevos se habilitan sin costo extra</span></div>
+          <div class="pr">$24.999</div>
         </div>
         <div class="paso">
           <div class="et"><b>Lanzamiento</b><span>Con Módulos 5–7 publicados y primeros testimonios</span></div>
-          <div class="pr">US$55</div>
+          <div class="pr">$49.999</div>
         </div>
         <div class="paso">
           <div class="et"><b>Precio regular</b><span>Curso completo + módulo de ventas y objeciones</span></div>
-          <div class="pr">US$90</div>
+          <div class="pr">$60.000</div>
         </div>
       </div>
 
       <div class="centro-btn">
-        <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Quiero mi lugar de fundador — US$35 <small>Acceso inmediato · Garantía 7 días</small></a>
+        <a class="btn grande" href="https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas" data-cta>Quiero mi lugar de fundador — $24.999 <small>Acceso inmediato · Garantía 7 días</small></a>
       </div>
-      <div class="pagos">Pago procesado por <b>Hotmart</b> · Tarjeta de crédito/débito, PayPal y medios locales según el país. Entorno seguro.</div>
+      <div class="pagos">Pago procesado por <b>Shopify</b> (tarjeta de crédito/débito y Mercado Pago) · Entorno seguro.</div>
       <div class="wa-alt">
-        <b>¿Estás en Argentina?</b> Pagá con <b>Mercado Pago</b> ($54.999, tarjeta hasta en 18 cuotas) o transferencia:<br>
-        <a href="https://mpago.la/2xWGMQT" target="_blank" rel="noopener">Pagar con Mercado Pago →</a>
-        <p style="margin:12px 0 6px;font-size:.85rem;color:var(--tinta-2)">⚠️ <b>Importante:</b> después de pagar, mandame el comprobante por WhatsApp así te envío el acceso al instante.</p>
-        <a href="https://wa.me/5491157067626?text=Hola!%20Ya%20pagu%C3%A9%20el%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20(M%C3%A9todo%20Transflex)%20por%20Mercado%20Pago.%20Te%20env%C3%ADo%20el%20comprobante%20para%20que%20me%20mandes%20el%20acceso." target="_blank" rel="noopener">Enviar comprobante por WhatsApp →</a><br>
-        ¿Dudas o querés coordinar la transferencia?
-        <a href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20(M%C3%A9todo%20Transflex).%20Quiero%20hacer%20una%20consulta%20/%20comprar%20por%20transferencia." target="_blank" rel="noopener">Escribinos por WhatsApp →</a>
+        <b>¿Dudas antes de comprar?</b><br>
+        <a href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada.%20Quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribinos por WhatsApp →</a>
+      </div>
+      <div class="wa-alt" style="margin-top:16px;border-top:1px dashed var(--linea);padding-top:16px">
+        <b>¿Preferís ir de a poco?</b><br>
+        Podés arrancar comprando solo el <b>Módulo 1</b> y, si te sirve, ir sumando los siguientes a tu ritmo, cada uno a su propio precio (los valores de la tabla de arriba). Comprando todos los módulos sueltos el total te queda en <b>$60.000</b> — igual te conviene más el precio fundador si sabés que querés el curso completo. Coordinalo por WhatsApp:<br>
+        <a href="https://wa.me/5491157067626?text=Hola!%20Quiero%20comprar%20el%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20m%C3%B3dulo%20por%20m%C3%B3dulo%2C%20empezando%20por%20el%20M%C3%B3dulo%201." target="_blank" rel="noopener">Consultar módulo por módulo →</a>
       </div>
     </div>
   </div>
@@ -684,7 +722,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
       <div class="sello">7 DÍAS<br>GARANTÍA</div>
       <div>
         <h3>Probalo sin riesgo</h3>
-        <p style="margin:0;color:var(--tinta-2)">Entrá, mirá los primeros módulos y aplicá lo que quieras. Si en <b>7 días</b> sentís que no es para vos, pedís el reembolso completo desde la misma plataforma de Hotmart, sin explicaciones y sin trámites raros. El riesgo lo ponemos nosotros.</p>
+        <p style="margin:0;color:var(--tinta-2)">Entrá, mirá los primeros módulos y aplicá lo que quieras. Si en <b>7 días</b> sentís que no es para vos, nos escribís y te devolvemos el pago completo, sin explicaciones y sin trámites raros. El riesgo lo ponemos nosotros.</p>
       </div>
     </div>
   </div>
@@ -701,14 +739,15 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     <h2>Lo que solés querer saber antes de entrar</h2>
   </div>
   <div class="wrap faq" style="margin-top:22px">
+    <details><summary>¿Qué significa "precio fundador"?</summary><p>Es el precio para las primeras personas que se anotan, mientras el curso todavía está sumando módulos. Vos pagás ese precio más bajo una sola vez, y a medida que se agregan módulos y bonos nuevos los recibís sin pagar de nuevo. El precio va subiendo para quienes se anoten más adelante, cuando el curso ya esté más completo.</p></details>
     <details><summary>¿Necesito experiencia previa?</summary><p>Es ideal si ya tenés nociones de laboratorio dental (manejo de yeso, encerado, muflas). No es un curso "desde cero absoluto" para público general: está pensado para técnicos, protésicos, odontólogos y estudiantes avanzados.</p></details>
     <details><summary>¿Qué equipamiento hace falta?</summary><p>Prensa/sistema de inyección, mufla de inyección, horno o recipiente de plastificado, cartuchos de material flexible y herramientas básicas de terminado. En el Módulo 1 y en el directorio de proveedores te mostramos opciones y dónde conseguirlas en LATAM.</p></details>
-    <details><summary>¿Cómo accedo al curso?</summary><p>Apenas se confirma el pago recibís por email el acceso a todo el material: los videos y los PDF, ordenados por módulo. Lo ves cuando quieras, desde la computadora o el celular, sin límite de tiempo.</p></details>
+    <details><summary>¿Cómo accedo al curso?</summary><p>Apenas se confirma el pago recibís por email el acceso a todo el material: los PDF de cada módulo, ordenados y listos para descargar. Los ves cuando quieras, desde la computadora o el celular, sin límite de tiempo.</p></details>
     <details><summary>¿Por cuánto tiempo lo puedo ver?</summary><p>Acceso de por vida, incluidas las actualizaciones y los módulos nuevos que se agreguen más adelante.</p></details>
-    <details><summary>¿Tiene clases en vivo o grupo de WhatsApp?</summary><p>No. Es un curso 100% grabado para que lo hagas a tu ritmo. Las preguntas que se repiten las respondo con videos y módulos nuevos que se suman a tu acceso sin costo. Para una consulta puntual sobre el material, escribís por email.</p></details>
-    <details><summary>¿Puedo pagar en mi moneda o en cuotas?</summary><p>Sí. El checkout de Hotmart muestra los medios de pago y las cuotas disponibles según tu país. Si preferís transferencia bancaria, escribinos por WhatsApp y lo coordinamos.</p></details>
-    <details><summary>¿Y si no me sirve?</summary><p>Tenés 7 días de garantía. Si no es para vos, pedís el reembolso completo desde Hotmart, sin vueltas.</p></details>
-    <details><summary>¿Este curso me habilita para trabajar como protésico?</summary><p>No. Es formación técnica sobre una técnica específica de laboratorio. La habilitación para ejercer depende de la normativa y los títulos oficiales de cada país. Consultá la regulación de tu lugar.</p></details>
+    <details><summary>¿Tiene clases en vivo o grupo de WhatsApp?</summary><p>No. Es un curso 100% en PDF para que lo hagas a tu ritmo. Las preguntas que se repiten las respondo con guías PDF y módulos nuevos que se suman a tu acceso sin costo. Para una consulta puntual sobre el material, escribís por email.</p></details>
+    <details><summary>¿Puedo pagar en mi moneda o en cuotas?</summary><p>Sí. Podés pagar con tarjeta de crédito/débito o con Mercado Pago (hasta en cuotas, según tu banco). Si preferís transferencia bancaria, escribinos por WhatsApp y lo coordinamos.</p></details>
+    <details><summary>¿Y si no me sirve?</summary><p>Tenés 7 días de garantía. Si no es para vos, nos escribís y te devolvemos el pago completo, sin vueltas.</p></details>
+    <details><summary>¿Este curso me prepara para trabajar como protésico?</summary><p>Sí: te enseño la técnica completa de la prótesis flexible inyectada, de principio a fin, tal como la aplico yo todos los días en mi laboratorio, para que puedas ofrecer este servicio y cobrar por él. Lo que el curso no otorga es un título ni una habilitación profesional oficial —eso depende de la normativa de cada país—, pero el conocimiento técnico y la práctica que te vas a llevar son los mismos que usa cualquier protésico que trabaja con este sistema.</p></details>
   </div>
 </section>
 
@@ -716,8 +755,8 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
 <section class="cierre">
   <div class="wrap">
     <h2>Sumá una técnica que se paga bien y que pocos dominan de verdad</h2>
-    <p class="lead">Precio fundador: US$35 · 4 módulos disponibles + 3 en camino + 6 bonos · acceso de por vida · módulos nuevos incluidos · garantía de 7 días.</p>
-    <a class="btn grande" href="<< URL_CHECKOUT_HOTMART >>" data-cta style="margin:10px auto 0">Quiero mi lugar de fundador <small>Pago 100% seguro con Hotmart</small></a>
+    <p class="lead">Precio fundador: $24.999 · 4 módulos disponibles + 3 en camino + 6 bonos · acceso de por vida · módulos nuevos incluidos · garantía de 7 días.</p>
+    <a class="btn grande" href="https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas" data-cta style="margin:10px auto 0">Quiero mi lugar de fundador <small>Pago 100% seguro</small></a>
     <p class="garantia-linea" style="color:#9fc0c7">¿Dudas? <a href="https://wa.me/5491157067626?text=Hola!%20Tengo%20una%20consulta%20sobre%20el%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada." target="_blank" rel="noopener" style="color:#25D366;font-weight:800">Escribinos por WhatsApp</a></p>
   </div>
 </section>
@@ -726,41 +765,53 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
 <footer>
   <div class="wrap">
     <div>
-      <h4>Curso Prótesis Flexible Inyectada — Método Transflex</h4>
+      <h4>Curso Prótesis Flexible Inyectada — Método de Inyección Flexible</h4>
       <p style="margin:0">Contacto: WhatsApp <a href="https://wa.me/5491157067626" target="_blank" rel="noopener">+54 9 11 5706-7626</a> · Email: <a href="mailto:stemayorga@gmail.com">stemayorga@gmail.com</a> · González Catán, Provincia de Buenos Aires, Argentina</p>
     </div>
 
     <div id="privacidad" class="legal">
       <h4>Política de privacidad</h4>
-      <p class="disc">Los datos que dejes (nombre, email, teléfono) se usan únicamente para procesar tu compra, darte acceso al curso y brindarte soporte. No vendemos ni cedemos tu información a terceros ajenos a la operación. El pago y la facturación los gestiona Hotmart según su propia política de privacidad. Podés pedir la baja o la eliminación de tus datos escribiendo al contacto de arriba.</p>
+      <p class="disc">Los datos que dejes (nombre, email, teléfono) se usan únicamente para procesar tu compra, darte acceso al curso y brindarte soporte. No vendemos ni cedemos tu información a terceros ajenos a la operación. El pago y la facturación los gestiona Shopify según su propia política de privacidad. Podés pedir la baja o la eliminación de tus datos escribiendo al contacto de arriba.</p>
     </div>
 
     <div id="terminos" class="legal">
       <h4>Términos y aviso legal</h4>
-      <p class="disc">Este es un curso de formación técnica para laboratorio dental. No otorga título ni habilitación profesional; la autorización para ejercer depende de la normativa de cada país. Los resultados dependen de la práctica, el equipamiento y la dedicación de cada alumno: no garantizamos ingresos ni resultados económicos específicos. Las imágenes corresponden a trabajos de laboratorio reales y son ilustrativas. Compra y reembolsos (7 días) se rigen por los términos de Hotmart.</p>
+      <p class="disc">Este es un curso de formación técnica para laboratorio dental. No otorga título ni habilitación profesional; la autorización para ejercer depende de la normativa de cada país. Los resultados dependen de la práctica, el equipamiento y la dedicación de cada alumno: no garantizamos ingresos ni resultados económicos específicos. Las imágenes corresponden a trabajos de laboratorio reales y son ilustrativas. Compra y reembolsos (7 días) se coordinan directamente con nosotros por WhatsApp o email.</p>
     </div>
 
     <div class="legal">
-      <p class="disc">Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Tampoco está avalado por Meta de ninguna forma. FACEBOOK e INSTAGRAM son marcas registradas de Meta Platforms, Inc. "Transflex" se menciona a título descriptivo de la técnica y pertenece a sus respectivos titulares.</p>
+      <p class="disc">Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Tampoco está avalado por Meta de ninguna forma. FACEBOOK e INSTAGRAM son marcas registradas de Meta Platforms, Inc. "Corflex" se menciona a título descriptivo del equipo utilizado y pertenece a sus respectivos titulares.</p>
       <p class="disc">© <span id="year"></span> — Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
 
 <!-- WHATSAPP FLOTANTE -->
-<a class="wa-float" href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada%20(M%C3%A9todo%20Transflex)." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+<a class="wa-float" href="https://wa.me/5491157067626?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20del%20Curso%20de%20Pr%C3%B3tesis%20Flexible%20Inyectada." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.73c0 4.46-3.63 8.09-8.1 8.09a8.1 8.1 0 0 1-4.12-1.13l-.3-.17-3.15.82.84-3.07-.2-.32a8.05 8.05 0 0 1-1.24-4.3c0-4.46 3.63-8.09 8.09-8.09Zm4.65 10.28c-.25-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.29.19-.54.06-.25-.13-1.07-.4-2.03-1.26-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.38-.78-1.89-.2-.49-.42-.42-.57-.43l-.49-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.3Z"/></svg>
   <span>¿Dudas? Escribinos</span>
 </a>
 
 <!-- BARRA COMPRA FIJA -->
 <div class="barra-compra" id="barra">
-  <div class="p"><s>US$90</s><b>US$35</b></div>
-  <a class="btn" href="<< URL_CHECKOUT_HOTMART >>" data-cta>Ser fundador</a>
+  <div class="p"><s>$60.000</s><b>$24.999</b></div>
+  <a class="btn" href="https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas" data-cta>Ser fundador</a>
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox"><button aria-label="Cerrar">×</button><img src="" alt=""></div>
+
+<!-- POP-UP DE SALIDA -->
+<div class="popup-overlay" id="popupExit">
+  <div class="popup-box">
+    <button class="popup-cerrar" id="popupCerrar" aria-label="Cerrar">×</button>
+    <span class="kicker" style="background:rgba(245,166,35,.16);color:var(--acento)">Antes de irte</span>
+    <h3>¿Te vas sin asegurar tu precio fundador?</h3>
+    <p>Ahora mismo podés entrar por <b>$24.999</b> — el precio más bajo que va a tener el curso. Cada módulo nuevo se suma a tu acceso sin pagar de nuevo, y el precio para los que entren después sube.</p>
+    <a class="btn grande" href="https://s1h3xq-vp.myshopify.com/products/curso-de-protesis-flexibles-inyectadas" data-cta>Quiero mi lugar de fundador — $24.999</a>
+    <p style="font-size:.8rem;color:var(--tinta-2);margin-top:10px">Garantía de 7 días · pago 100% seguro</p>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -819,7 +870,7 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
   /* ---------- COUNT-UP VALOR TOTAL ---------- */
   var totalEl = document.getElementById('total-val');
   var animado = false;
-  function fmt(n){ return 'US$' + Math.round(n).toLocaleString('es-AR'); }
+  function fmt(n){ return '$' + Math.round(n).toLocaleString('es-AR'); }
   function animarTotal(){
     if(animado) return; animado = true;
     var objetivo = 0;
@@ -853,16 +904,6 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
     else barra.classList.remove('on');
   }, {passive:true});
 
-  /* ---------- AVISO SI FALTA EL LINK DE HOTMART ---------- */
-  document.querySelectorAll('[data-cta]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      if(a.getAttribute('href').indexOf('URL_CHECKOUT_HOTMART') > -1){
-        e.preventDefault();
-        alert('Falta cargar el link de checkout de Hotmart.\n\nAbrí index.html y reemplazá  << URL_CHECKOUT_HOTMART >>  por el link de pago de tu producto en Hotmart.');
-      }
-    });
-  });
-
   /* ---------- META PIXEL: evento Lead en clics de intención de compra ---------- */
   document.addEventListener('click', function(e){
     var a = e.target.closest('a[href*="mpago.la"], a[href*="wa.me"], [data-cta]');
@@ -870,6 +911,63 @@ src="https://www.facebook.com/tr?id=1432353984849922&ev=PageView&noscript=1"
       fbq('track', 'Lead');
     }
   });
+
+  /* ---------- CONTADOR DE URGENCIA (24hs por visitante) ---------- */
+  (function(){
+    var KEY = 'transflex_deadline';
+    var DURACION = 24*60*60*1000;
+    var deadline;
+    try{
+      deadline = parseInt(localStorage.getItem(KEY), 10);
+      if(!deadline || deadline < Date.now()){
+        deadline = Date.now() + DURACION;
+        localStorage.setItem(KEY, deadline);
+      }
+    }catch(e){ deadline = Date.now() + DURACION; }
+    var el = document.getElementById('contador-tiempo');
+    if(!el) return;
+    function pad(n){ return (n<10?'0':'')+n; }
+    function tick(){
+      var rest = deadline - Date.now();
+      if(rest <= 0){
+        deadline = Date.now() + DURACION;
+        try{ localStorage.setItem(KEY, deadline); }catch(e){}
+        rest = DURACION;
+      }
+      var h = Math.floor(rest/3600000);
+      var m = Math.floor((rest%3600000)/60000);
+      var s = Math.floor((rest%60000)/1000);
+      el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* ---------- POP-UP DE SALIDA (exit-intent) ---------- */
+  (function(){
+    var pop = document.getElementById('popupExit');
+    var cerrar = document.getElementById('popupCerrar');
+    if(!pop || !cerrar) return;
+    var SESSION_KEY = 'transflex_popup_shown';
+    var mostrado = false;
+    try{ mostrado = sessionStorage.getItem(SESSION_KEY) === '1'; }catch(e){}
+    function mostrar(){
+      if(mostrado) return;
+      mostrado = true;
+      try{ sessionStorage.setItem(SESSION_KEY, '1'); }catch(e){}
+      pop.classList.add('on');
+    }
+    function ocultar(){ pop.classList.remove('on'); }
+    document.addEventListener('mouseout', function(e){
+      if(!e.relatedTarget && e.clientY < 10) mostrar();
+    });
+    cerrar.addEventListener('click', ocultar);
+    pop.addEventListener('click', function(e){ if(e.target === pop) ocultar(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') ocultar(); });
+    setTimeout(function(){
+      if(!mostrado && window.scrollY > document.body.scrollHeight*0.3) mostrar();
+    }, 30000);
+  })();
 })();
 </script>
 </body>
